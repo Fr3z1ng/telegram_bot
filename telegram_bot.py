@@ -7,6 +7,7 @@ from data_base import sqlite_db
 async def on_startup(_):
     print("Бот вышел в онлайн")
     await sqlite_db.sql_start()
+    # await sqlite_db.sql_start()
 
 
 client.register_handlers_client(dp)

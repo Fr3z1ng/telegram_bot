@@ -1,4 +1,5 @@
 from aiogram import types, Dispatcher
+
 from create_bot import dp, bot
 from keybords import kb_client
 from data_base import sqlite_db
@@ -27,8 +28,6 @@ async def seller_place_command(message: types.Message):
 async def bot_menu_command(message: types.Message):
     await sqlite_db.sql_menu(message)
 
-# async def no_command(message : types.Message):
-#     await message.answer("Нет такой команды,введите /start и следуйте инструкции")
 
 
 def register_handlers_client(dp: Dispatcher):
@@ -36,4 +35,4 @@ def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(seller_bot_command, commands=["Время_доставки"])
     dp.register_message_handler(seller_place_command, commands=["Место_доставки"])
     dp.register_message_handler(bot_menu_command, commands=["Меню"])
-    # dp.register_message_handler(no_command)
+
